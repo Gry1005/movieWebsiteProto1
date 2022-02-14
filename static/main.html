@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<style type="text/css">
+
+    body{
+        background-color: black;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    div.head{
+        width:100%;
+        background-image: linear-gradient(to right,black,black,black,red);
+        margin-bottom: 0px;
+    }
+
+    p.headText{
+        color: #ab0809;
+        font-weight: bold;
+        font-size: 30px;
+        margin-top:20px;
+        margin-left: 0px;
+        width:40%;
+        margin-bottom: 10px;
+    }
+
+    div.main{
+        width:1500px;
+        margin-top:0px;
+    }
+
+    div.left{
+        width:140px;
+        margin-left:140px;
+        margin-right: 0px;
+        float:left;
+    }
+
+    p.select{
+        height:80px;
+        line-height: 70px;
+        font-size: 20px;
+        padding-left: 10px;
+        margin:0px;
+        cursor: pointer;
+    }
+
+    p.select:hover{
+
+        height:80px;
+        line-height: 70px;
+        font-size: 20px;
+        padding-left: 10px;
+        margin:0px;
+        cursor: pointer;
+        color:red;
+    }
+
+    p.selected{
+        color: red;
+        border-bottom: 1px solid white;
+    }
+
+    p.notSelected{
+        color:white;
+    }
+
+    div.right{
+        width:1210px;
+        float:left;
+        margin-left: 0px;
+        margin-top:0px;
+        border-left: 1px solid white;
+    }
+
+    div.right1{
+        width:800px;
+        float:left;
+        margin-left:150px;
+        text-align: center;
+        margin-bottom: 150px;
+        /*display:none;*/
+    }
+
+    p.right_head1{
+        color:white;
+
+        font-size:25px;
+        margin-bottom: 0px;
+    }
+
+    p.right_head2{
+        color:white;
+
+        font-size:25px;
+        margin-bottom: 0px;
+        margin-top: 100px;
+    }
+
+    div.right_change1{
+        margin-top: 0px;
+        margin-top: 20px;
+        position: relative;
+        z-index:1;
+        display: none;
+    }
+
+    div.right_change2{
+        margin-top: 0px;
+        margin-top: 20px;
+        position: relative;
+        z-index:1;
+        display: none;
+    }
+
+    img.right_change1_img{
+        z-index:1;
+    }
+
+    div.right_change1_text{
+        z-index:2;
+        width:780px;
+        height:80px;
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        left:10px;
+        top:359px;
+        background: rgba(0,0,0,0.7);
+        text-align: center;
+    }
+
+    p.right_change1_text{
+        color:white;
+
+        font-size:20px;
+    }
+
+    div.right2{
+        width:1000px;
+        float:left;
+        margin-left:10px;
+        display:none;
+    }
+
+    div.search{
+        width:1000px;
+        background-image: linear-gradient(to top,black,red);
+        text-align: center;
+        padding-top:10px;
+        padding-bottom: 70px;
+        margin-bottom: 0px;
+    }
+
+    p.search{
+        color:white;
+
+        font-size:25px;
+        font-weight: bold;
+    }
+
+    form.search{
+        margin-left:200px;
+        text-align: left;
+    }
+
+    div.keywords{
+       margin-bottom: 25px;
+       margin-left:2px;
+    }
+
+    div.category{
+        margin-bottom: 25px;
+    }
+
+    div.buttons{
+        display: inline;
+        margin-left:190px;
+    }
+
+    button.search_button{
+        color:white;
+        background-color: black;
+        margin-right:60px;
+        height:35px;
+        width:80px;
+        font-size:15px;
+        border: none;
+        border-radius:5px;
+    }
+
+    button.search_button:hover{
+        background-color: #b0271d;
+    }
+
+    span.keywords{
+        color:white;
+
+    }
+
+    input.keywords{
+        width: 500px;
+        border:none;
+        border-radius: 5px;
+        height:25px;
+    }
+
+    #category{
+        border:none;
+        border-radius: 5px;
+        height:25px;
+        width:200px;
+    }
+
+    span.search_star{
+        color:red;
+    }
+
+    div.NoResults{
+        width:1000px;
+        height:230px;
+        text-align: center;
+        padding-top: 50px;
+        /*display: none;*/
+    }
+
+    p.NoResults{
+        color:white;
+        display: none;
+    }
+
+    div.Results{
+        width:1000px;
+        margin-top: 0px;
+        display:none;
+    }
+
+    p.showingResults{
+        color:white;
+        font-size:20px;
+        margin-top: 0px;
+    }
+
+    div.resultItem{
+        width:1000px;
+        border-left: solid 6px #bd090c;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    img.poster{
+        float:left;
+        margin-left:0px;
+    }
+
+    div.resultItem_right{
+        float:left;
+        margin-left:20px;
+        width:770px;
+
+    }
+
+    p.resultItem_title{
+        color:white;
+        font-weight: bold;
+        font-size: 28px;
+    }
+
+    p.resultItem_info{
+        color:white;
+    }
+
+    span.resultItem_star{
+        color:red;
+    }
+
+    p.resultItem_overview{
+        color:white;
+        display: -webkit-box;
+        overflow: hidden;
+        white-space: normal!important;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    button.resultItem_showMore{
+        background-color: #ba0b10;
+        color:white;
+        height:30px;
+        font-size:15px;
+        border: none;
+        border-radius:5px;
+    }
+
+    button.resultItem_showMore:hover{
+        background-color: #c8c8c8;
+    }
+
+    div.tail{
+        height: 65px;
+        width: 1200px;
+        margin-right:0px;
+        margin-top: 50px;
+        text-align: right;
+        float:right;
+        background-color: #550a09;
+    }
+
+    p.tail{
+        color: white;
+        font-size: 15px;
+        font-style: italic;
+
+        margin-right:20px;
+        margin-bottom: 20px;
+    }
+
+    div.modal{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 120px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    }
+
+    div.modal_content{
+        position: relative;
+        background-color: #c2c2c2;
+        margin-left: 330px;
+        padding-top: 20px;
+        width: 900px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    div.modal_left{
+        margin-left:40px;
+        width:800px;
+    }
+
+    span.modal_title{
+
+        font-size: 30px;
+    }
+
+    span.modal_infoIcon{
+        color: red;
+    }
+
+    p.modal_subTitle{
+        margin-top:50px;
+        font-weight: 800;
+        font-size:25px;
+    }
+
+    div.castItem{
+        text-align: center;
+        display: inline-block;
+        width:195px;
+        height:380px;
+        clear: both;
+        /*border: solid 1px black;*/
+    }
+
+    p.modal_cast_info{
+        width:185px;
+        font-size: 15px;
+        white-space:nowrap;/*不换行*/
+        overflow:hidden;/**/
+        text-overflow:ellipsis;/*超长显示为省略号*/
+    }
+
+    p.modal_review_content{
+        margin-top:0px;
+        display: -webkit-box;
+        overflow: hidden;
+        white-space: normal!important;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    div.modal_right{
+        position: absolute;
+        right:32px;
+        top:10px;
+    }
+
+    p.modal_right{
+        color:gray;
+        font-weight: bold;
+    }
+
+    p.modal_right:hover{
+        color:black;
+        cursor: pointer;
+    }
+
+    a:link { text-decoration: none;color: red}
+    a:active { text-decoration:none}
+    a:hover { text-decoration:none;color: red}
+    a:visited { text-decoration: none;color: red}
+
+</style>
+
+<body>
+
+    <div class="modal" id="modal">
+        <div class="modal_content">
+            <div class="modal_left">
+
+                <div id="infoDicNode"></div>
+
+                <p  class="modal_subTitle">Cast</p>
+
+                <div id="castNode" style="width:800px; float:left; margin-bottom: 40px;"></div>
+
+                <p class="modal_subTitle">Reviews</p>
+
+                <div id="reviewNode"></div>
+
+                <div style="width:800px; height: 150px"><input id="input_itemId" value="{{itemId}}" style="display: none"/></div>
+
+            </div>
+
+            <div class="modal_right">
+                <p class="modal_right" onclick="close_handleClick()">&#10006</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="head">
+        <p class="headText">THE MOVIE DB</p>
+    </div>
+
+    <div class="main">
+
+        <div class="left" id="div_left_1">
+            <p id="homeB" class="select selected" onclick="homeClick()">Home  &nbsp; &nbsp; &nbsp; &#10230;</p>
+            <p id="searchB" class="select notSelected" onclick="searchClick()">Search  &nbsp; &nbsp;  &#10230;</p>
+        </div>
+
+        <div class="right">
+
+            <div class="right1" id="right1">
+
+            <p class="right_head1">
+                Trending Movies
+            </p>
+
+            <div id="movieSlide"></div>
+
+
+            <p class="right_head2">
+                TV Shows On-Air Today
+            </p>
+
+            <div id="tvSlide"></div>
+
+            </div>
+
+
+            <div class="right2" id="right2">
+
+                <div class="search">
+
+                    <p class="search">Search</p>
+
+                    <form class="search" id="search_form" method="GET">
+
+                        <div class="keywords">
+                            <span class="keywords">Keyword</span><span class="search_star">* &nbsp;</span> <input class="keywords" id="keyword" name="keyword" />
+                        </div>
+
+                        <div class="category">
+                            <span class="keywords">Category</span><span class="search_star">* &nbsp;</span>
+                            <select id="category" name="category">
+
+                                <option value ="" selected="selected"></option>
+
+                                <option value ="M">Movies</option>
+
+                                <option value="T">TV Shows</option>
+
+                                <option value="MT">Movies and TV Shows</option>
+
+                            </select>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="button" class="search_button" onclick="search_handleClick()">Search</button>
+                            <button type="button" class="search_button" onclick="clear_handleClick()">Clear</button>
+                        </div>
+
+                        <input name="page" value="1" style="display: none"/>
+
+                    </form>
+
+                </div>
+
+                <div class="NoResults" id="NoResults">
+                        <p class="NoResults" id="NoResults_text">No results found.</p>
+                </div>
+
+
+                <div class="Results" id="Results">
+
+                    <p class="showingResults">Showing results...</p>
+
+                    <div id="ResultList"></div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="tail">
+                <p class="tail">Designed and developed by Runyu Guan <br/> Powered by TMDB</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script language="JavaScript">
+
+    function getXMLHttp(rPath)
+    {
+        xmlHttp=null;
+        if (window.XMLHttpRequest)
+        {// code for IE7, Firefox, Opera, etc.
+            xmlHttp=new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject)
+        {// code for IE6, IE5
+            xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        if (xmlHttp!=null)
+        {
+            xmlHttp.open("GET", rPath, false);
+            xmlHttp.send(null);
+            xmlDoc=xmlHttp.responseText;
+
+            var results=JSON.parse(xmlDoc);
+
+        }
+        else
+        {
+            alert("Your browser does not support XMLHTTP.");
+        }
+
+        return results;
+    }
+
+    //home页面请求数据
+    homeResults=getXMLHttp("/endpoint?page=0")
+
+    //构建home页面
+    let movieList = homeResults.movieList;
+    let TVList = homeResults.TVList;
+
+    var movieNode=document.getElementById("movieSlide");
+    var tvNode=document.getElementById("tvSlide");
+
+    for(var i =0;i<movieList.length;i++){
+        var right_change1=document.createElement("div");
+        right_change1.className="right_change1";
+
+        right_change1_img=document.createElement("img");
+        right_change1_img.className="right_change1_img";
+        right_change1_img.src=movieList[i].backdrop_path;
+
+        rc1t=document.createElement("div");
+        rc1t.className="right_change1_text";
+
+        rc1tp=document.createElement("p");
+        rc1tp.className="right_change1_text";
+        rc1tp.innerText=movieList[i].title+" ("+movieList[i].release_date+")";
+
+        rc1t.appendChild(rc1tp);
+        right_change1.appendChild(right_change1_img);
+        right_change1.appendChild(rc1t);
+
+        movieNode.appendChild(right_change1);
+    }
+
+    for(var i =0;i<TVList.length;i++){
+        var right_change1=document.createElement("div");
+        right_change1.className="right_change2";
+
+        right_change1_img=document.createElement("img");
+        right_change1_img.className="right_change1_img";
+        right_change1_img.src=TVList[i].backdrop_path;
+
+        rc1t=document.createElement("div");
+        rc1t.className="right_change1_text";
+
+        rc1tp=document.createElement("p");
+        rc1tp.className="right_change1_text";
+        rc1tp.innerText=TVList[i].name+" ("+TVList[i].date+")";
+
+        rc1t.appendChild(rc1tp);
+        right_change1.appendChild(right_change1_img);
+        right_change1.appendChild(rc1t);
+
+        tvNode.appendChild(right_change1);
+    }
+
+    //点击事件
+    function homeClick(){
+        var homeB = document.getElementById("homeB");
+        var searchB=document.getElementById("searchB");
+        searchB.className = "select notSelected";
+        homeB.className="select selected";
+
+
+        var right1=document.getElementById("right1");
+        var right2=document.getElementById("right2");
+
+        right1.style.display="block";
+        right2.style.display="none";
+
+        //console.log("home click!!!");
+    }
+
+    //点击事件
+    function searchClick(t){
+        var homeB = document.getElementById("homeB");
+        var searchB=document.getElementById("searchB");
+        homeB.className = "select notSelected";
+        searchB.className="select selected";
+
+
+        var right1=document.getElementById("right1");
+        var right2=document.getElementById("right2");
+
+        right1.style.display="none";
+        right2.style.display="block";
+
+        //console.log("search click!!!");
+    }
+
+    function validVoteAverage(x)
+    {
+        if(x.toString().indexOf('.')===-1){
+            //整数加一位小数
+            return parseFloat(x).toFixed(1);
+        }
+        else
+        {
+            return x;
+        }
+    }
+
+    //search 点击事件
+    function search_handleClick(){
+
+        var keyword=document.getElementById("keyword");
+        var category=document.getElementById("category");
+
+        if (keyword.value.match(/^\s*$/) || category.value.match(/^\s*$/)){
+
+            alert("Please enter valid values.");
+
+        }
+        else{
+            rPath='/search?'+'keyword='+keyword.value+"&category="+category.value;
+            resultList=getXMLHttp(rPath);
+
+            //console.log(resultList);
+
+            var NoResultsShow = document.getElementById("NoResults");
+            var NoResultsNode=document.getElementById("NoResults_text");
+            var ResultsShow = document.getElementById("Results");
+            var resultListNode=document.getElementById("ResultList");
+
+            resultListNode.innerHTML="";
+
+            if(resultList.length===0){
+                NoResultsShow.style.display = "block";
+                NoResultsNode.style.display="block";
+                ResultsShow.style.display="none";
+            }
+            else{
+
+                NoResultsShow.style.display="none";
+                ResultsShow.style.display="block";
+
+                for(var i=0; i<resultList.length;i++)
+                {
+                    item=resultList[i];
+
+                    var resultItem_div=document.createElement("div");
+                    resultItem_div.className="resultItem";
+
+                    var poster_img=document.createElement("img");
+                    poster_img.className="poster";
+                    poster_img.src=item.poster_path;
+                    poster_img.style="width:185px;height:290px;";
+                    resultItem_div.appendChild(poster_img);
+
+                    var resultItemRight_div=document.createElement("div");
+                    resultItemRight_div.className="resultItem_right";
+
+                    var resultItemTitle=document.createElement("p");
+                    resultItemTitle.className="resultItem_title";
+                    resultItemTitle.innerHTML=item.title;
+                    resultItemRight_div.appendChild(resultItemTitle);
+
+                    var resultInfo=document.createElement("p");
+                    resultInfo.className="resultItem_info";
+
+                    var dateGenre=document.createElement("span");
+                    var dateGenreStr=item.date+" | ";
+                    for(var j=0;j<item.gList.length-1;j++){
+                        dateGenreStr=dateGenreStr+item.gList[j]+", ";
+                    }
+                    dateGenreStr=dateGenreStr+item.gList[item.gList.length-1];
+                    dateGenre.innerHTML=dateGenreStr+"<br/>";
+
+                    var resultStar=document.createElement("span");
+                    resultStar.className="resultItem_star";
+                    resultStar.style="font-size:14px;";
+
+                    resultStar.innerHTML="&#9733 "+validVoteAverage(item.vote_average)+"/5 &nbsp;";
+
+                    var resultNumber=document.createElement("span");
+                    resultNumber.className="resultItem_number";
+                    resultNumber.style="font-size:14px;";
+                    resultNumber.innerHTML=" "+item.vote_count+" votes";
+
+                    resultInfo.appendChild(dateGenre);
+                    resultInfo.appendChild(resultStar);
+                    resultInfo.appendChild(resultNumber);
+                    resultItemRight_div.appendChild(resultInfo);
+
+                    var resultOverview=document.createElement("p");
+                    resultOverview.className="resultItem_overview";
+                    resultOverview.innerHTML=item.overview;
+                    resultItemRight_div.appendChild(resultOverview);
+
+                    var showMore=document.createElement("div");
+                    showMore.innerHTML='<button class=\"resultItem_showMore\" onclick=\"showMore_handleClick(this.value)\" value=\"'+item.id+'|'+item.type+'\">Show more</button>'
+                    resultItemRight_div.appendChild(showMore);
+
+                    resultItem_div.appendChild(resultItemRight_div);
+                    resultListNode.appendChild(resultItem_div);
+                }
+            }
+
+        }
+
+    }
+
+    //clear 点击事件
+    function clear_handleClick(){
+        var keyword=document.getElementById("keyword");
+        var category=document.getElementById("category");
+
+        var Results=document.getElementById("Results");
+
+        var NoResultsShow = document.getElementById("NoResults");
+        var Results_text=document.getElementById("NoResults_text");
+
+        keyword.value="";
+        category.value="";
+
+        NoResultsShow.style.display="block";
+
+        if (Results){
+            Results.style.display="none";
+        }
+
+        if (Results_text){
+            Results_text.style.display="none";
+        }
+
+    }
+
+    //关闭详情页
+    function close_handleClick(){
+        var modal=document.getElementById("modal");
+        modal.style.display="none";
+    }
+
+    //show more 点击
+    function showMore_handleClick(v){
+
+        //console.log("showMore clicked!!");
+
+        //var keyword=document.getElementById("keyword").value;
+        //var category=document.getElementById("category").value;
+
+        var itemId=v.split("|")[0];
+
+        var itemType=v.split("|")[1];
+
+        resultList=getXMLHttp('/showMore?itemId='+itemId+'&type='+itemType);
+
+        //console.log(resultList.infoDic);
+        var infoDicNode=document.getElementById("infoDicNode");
+        infoDicNode.innerHTML="";
+        var castNode=document.getElementById("castNode");
+        castNode.innerHTML="";
+        var reviewNode=document.getElementById("reviewNode");
+        reviewNode.innerHTML="";
+
+        var modal=document.getElementById("modal");
+        modal.style.display = "block";
+
+        //解析info
+        var infoDic=resultList.infoDic;
+
+        var back_img=document.createElement("img");
+        back_img.src=infoDic.backdrop_path;
+        infoDicNode.appendChild(back_img);
+
+        var title=document.createElement("p");
+        title.innerHTML='<span class="modal_title">'+infoDic.title+' </span><span class="modal_infoIcon"><a href="'+infoDic.link+'" target=“_blank”>&#9432</a></span>';
+        infoDicNode.appendChild(title);
+
+        var dateGenre=document.createElement("p");
+        dateGenre.style="font-size:20px;"
+        var dateGenreStr=infoDic.release_date+" | ";
+        for(var j=0;j<infoDic.gList.length-1;j++){
+            dateGenreStr=dateGenreStr+infoDic.gList[j]+", ";
+        }
+        dateGenreStr=dateGenreStr+infoDic.gList[infoDic.gList.length-1];
+        dateGenre.innerHTML=dateGenreStr;
+        infoDicNode.appendChild(dateGenre);
+
+        var vote=document.createElement("p");
+        vote.style="font-size:15px;";
+        vote.innerHTML='<span style="color: red;">&#9733 '+validVoteAverage(infoDic.vote_average)+'/5 &nbsp;</span><span> '+infoDic.vote_count+' votes</span>';
+        infoDicNode.appendChild(vote);
+
+        var overview=document.createElement("p");
+        overview.style="margin-top:35px;"
+        overview.innerHTML=infoDic.overview;
+        infoDicNode.appendChild(overview);
+
+        var sl=document.createElement("p");
+        sl.style=" font-style: italic; font-weight:bold";
+        var slStr="Spoken languages: ";
+        for(var j=0;j<infoDic.lList.length-1;j++){
+            slStr=slStr+infoDic.lList[j]+", ";
+        }
+        slStr=slStr+infoDic.lList[infoDic.lList.length-1];
+        sl.innerHTML=slStr;
+        infoDicNode.appendChild(sl);
+
+        //解析Cast
+        var castList=resultList.castList;
+        if(! castList || castList.length===0)
+        {
+            castNode.innerHTML='<p style="font-size:20px; font-weight: bold">N/A</p>';
+        }
+        else
+        {
+            for(var j=0;j<castList.length;j++)
+            {
+                var cast=castList[j];
+
+                var castItem = document.createElement("div");
+                castItem.className = "castItem";
+
+                var cast_img = document.createElement("img");
+                cast_img.src=cast.profile_path;
+                cast_img.style="width: 185px; height:290px;";
+                castItem.appendChild(cast_img)
+
+                var cast_info = document.createElement("p");
+                cast_info.className = "modal_cast_info";
+                cast_info.innerHTML = '<span style="font-weight: bold;">'+cast.name+'</span><br/>AS<span><br/>'+cast.character+'</span>';
+                castItem.appendChild(cast_info);
+
+                castNode.appendChild(castItem);
+            }
+        }
+
+        //解析review
+        var reviewList=resultList.reviewList;
+        if(!reviewList || reviewList.length===0)
+        {
+            reviewNode.innerHTML='<p style="font-size:20px; font-weight: bold">N/A</p>';
+        }
+        else
+        {
+            for(var j=0;j<reviewList.length;j++)
+            {
+                var review=reviewList[j];
+
+                reviewItem = document.createElement("div");
+                reviewItem.className = "reviewItem";
+                reviewItem.style = "margin-top:30px;";
+
+                reviewUD = document.createElement("p");
+                reviewUD.innerHTML = '<span style="font-weight: bold;">'+review.username+'</span> <span style="font-size: 14px;">on '+review.created_at[1]+'/'+review.created_at[2]+'/'+review.created_at[0]+'</span>';
+                reviewItem.appendChild(reviewUD);
+
+                if(review.rating){
+                    rating = document.createElement("p");
+                    rating.style = "margin-bottom:0px;"
+                    rating.innerHTML = '<span style="color: red;">&#9733 '+validVoteAverage(review.rating)+'/5</span>';
+                    reviewItem.appendChild(rating);
+                }
+                else{
+                    rating = document.createElement("p");
+                    rating.style = "margin-bottom:0px;"
+                    rating.innerHTML = '<span style="color: red;">&#9733 N/A</span>';
+                    reviewItem.appendChild(rating);
+                }
+
+                var reviewContent = document.createElement("p");
+                reviewContent.className = "modal_review_content";
+                reviewContent.innerHTML = review.content;
+                reviewItem.appendChild(reviewContent);
+
+                reviewItem.innerHTML=reviewItem.innerHTML+'<hr style="color: #bababa; width:650px;"/>';
+                reviewNode.appendChild(reviewItem);
+
+            }
+        }
+
+    }
+
+    //图片滚动
+
+    //淡入
+    function smoothIn(item){
+
+        var speed=10;
+        var alpha=0;
+
+        var inter=setInterval(function(){
+
+            //console.log("alpha:",alpha);
+
+            alpha=alpha+speed;
+            item.style.opacity=alpha/100;
+
+            if(alpha>=100){
+                clearInterval(inter);
+            }
+
+        },35);
+
+    }
+
+    function rightChange(showItems) {
+
+        var count=0;
+
+        showItems[count].style.display="block";
+
+         //添加计时器
+         setInterval(function () {
+
+            showItems[count].style.display="none";
+
+            if (count < showItems.length-1) {
+
+                count++;
+
+            }
+            else{
+
+                count=0;
+
+            }
+
+            showItems[count].style.display="block";
+            showItems[count].style.opacity=0;
+
+            //淡入
+            smoothIn(showItems[count]);
+
+        }, 4000);
+
+    }
+
+    //图片滚动1
+
+    var showItems1=document.getElementsByClassName("right_change1");
+
+    rightChange(showItems1);
+
+    //图片滚动2
+
+    var showItems2=document.getElementsByClassName("right_change2");
+
+    //console.log(showItems2);
+
+    rightChange(showItems2);
+
+    </script>
+
+</body>
+
+</html>
